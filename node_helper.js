@@ -19,6 +19,6 @@ module.exports = NodeHelper.create({
         self.sendSocketNotification('got_result', JSON.parse(body))
       }
     })
-  },
+  }
 
 })

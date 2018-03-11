@@ -21,6 +21,8 @@ A <a href="https://github.com/MichMich/MagicMirror">MagicMirror</a> module used 
 |`significantDigits`|Total digits to use for rounding the price (including before and after decimal point).<br> **Type** `number` <br> **Default** <i>2</i> |
 |`showGraphs`| Possibility to show currency graph over the last week in `displayType: logo`. <br> **Type:** `boolean` <br> **Default** <i>false</i> |
 |`coloredLogos`| Toggles white or colored logos `displayType: logo`. <br> **Type:** `boolean` <br> **Default** <i>false</i> |
+|`fontSize`| Dimension of price text. You can specify pixel values, em values or keywords.<br> **Type:** `string` <br>**Options:** `xx-small`, `x-small`, `small`, `medium`, `large`, `x-large`, `xx-large` <br> **Default** <i>xx-large</i> |
+|`limit`| Number of currencies to download, according to CoinMarketCap ranking. Increase this value only if you cannot display a currency. <br> **Type:** `string` <br> **Default** <i>100</i> |
 
 Here is an example of an entry in `config.js`
 ```
@@ -30,7 +32,7 @@ Here is an example of an entry in `config.js`
 	config: {
 		currency: ['ethereum', 'bitcoin'],
 		conversion: 'EUR',
-		showUSD: true,
+		showUSD: false,
 		headers: ['change24h', 'change1h', 'change7d'],
 		displayType: 'logoWithChanges',
 		showGraphs: true
@@ -57,19 +59,26 @@ Here is an example of an entry in `config.js`
 #### Display type: logoWithChanges + showGraphs
 ![Screenshot with logo changes and graphs](/logoWithChangesAndGraphView.png?raw=true "displayType: 'logoWithChanges', showGraphs: 'true'")
 
-
 #### Display type: logo + coloredLogos + showGraphs
 ![Screenshot with logo](/logoColoredGraph.png?raw=true "displayType: 'logo', showGraphs: 'true', coloredLogos: true")
 
 ## Cryptocurrency Logo
 
 Logo provided only for the following currencies:
-- Bitcoin
-- Ethereum
+- Bitcoin, Bitcoin cash, Bitcoin gold
+- Ethereum, Ethereum classic
 - Ripple
 - Stratis
 - Nem
 - Litecoin
+- Dash
+- Cardano
+- Eos
+- Iota
+- Monero
+- Neo
+- Stellar
+- Tron
 
 Feel free to ask for support of your favorite currency. Else, just implement it (eg: to add Litecoin logo):
 - Add `'litecoin'` to the currency module config
